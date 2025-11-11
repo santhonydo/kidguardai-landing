@@ -14,7 +14,7 @@ export function Comparison() {
     },
     {
       feature: 'All Browsers',
-      kidguard: { status: 'yes', note: 'Safari, Chrome, Firefox, Edge' },
+      kidguard: { status: 'yes', note: 'Safari, Chrome, Firefox' },
       bark: { status: 'no', note: 'Not supported' },
       qustodio: { status: 'partial', note: 'Safari only' },
       screentime: { status: 'no', note: 'Not supported' }
@@ -64,7 +64,7 @@ export function Comparison() {
     }
   }
 
-  const renderCell = (data: { status: string; note: string }, isKidGuard = false) => {
+  const renderCell = (data: { status: string; note: string }, isKidGuard = false, isMobile = false) => {
     if (data.status === 'price') {
       return (
         <div className={`font-bold ${isKidGuard ? 'text-blue-600' : 'text-gray-900'}`}>
@@ -73,6 +73,19 @@ export function Comparison() {
       )
     }
 
+    // Mobile: text first, then icon
+    if (isMobile) {
+      return (
+        <div className="flex items-center gap-2">
+          <span className={`text-sm ${isKidGuard ? 'text-blue-700 font-medium' : 'text-gray-600'}`}>
+            {data.note}
+          </span>
+          {renderIcon(data.status)}
+        </div>
+      )
+    }
+
+    // Desktop: stacked layout
     return (
       <div className="flex flex-col items-center gap-1">
         {renderIcon(data.status)}
@@ -160,7 +173,7 @@ export function Comparison() {
               {features.map((row, index) => (
                 <div key={index} className="flex items-center justify-between py-2 border-b border-gray-100 last:border-0">
                   <span className="text-sm font-medium text-gray-900">{row.feature}</span>
-                  {renderCell(row.kidguard, true)}
+                  {renderCell(row.kidguard, true, true)}
                 </div>
               ))}
             </div>
@@ -180,7 +193,7 @@ export function Comparison() {
                 {competitor.data.map((row, index) => (
                   <div key={index} className="flex items-center justify-between py-2 border-b border-gray-100 last:border-0">
                     <span className="text-sm font-medium text-gray-900">{row.feature}</span>
-                    {renderCell(row.value)}
+                    {renderCell(row.value, false, true)}
                   </div>
                 ))}
               </div>

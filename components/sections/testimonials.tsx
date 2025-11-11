@@ -65,7 +65,7 @@ export function Testimonials() {
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Trusted by{' '}
-            <span className="text-blue-600">Thousands of Parents</span>
+            <span className="text-blue-600">Parents</span>
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
             Join beta testers who've already switched from Bark, Qustodio, and other solutions
