@@ -44,6 +44,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: "KidGuard AI - AI-Powered Parental Control",
+        type: "image/jpeg",
       },
     ],
     locale: "en_US",
