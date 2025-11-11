@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     siteName: "KidGuard AI",
     images: [
       {
-        url: "https://www.kidguardai.com/og-image.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "KidGuard AI - AI-Powered Parental Control",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     title: "KidGuard AI - AI-Powered Parental Control for iOS & Mac",
     description: "The only parental control with on-device AI and SMS remote access. Get early access for $79/year.",
     creator: "@kidguardai",
-    images: ["https://www.kidguardai.com/og-image.png"],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
