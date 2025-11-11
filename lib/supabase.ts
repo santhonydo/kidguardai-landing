@@ -1,0 +1,15 @@
+import { createClient } from '@supabase/supabase-js'
+
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+
+export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+
+export type WaitlistEntry = {
+  id: string
+  email: string
+  platform: 'ios' | 'macos' | 'both'
+  created_at: string
+  referral_code?: string
+  metadata?: Record<string, any>
+}
