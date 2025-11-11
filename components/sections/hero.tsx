@@ -20,14 +20,6 @@ export function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left column - Copy and CTA */}
           <div className="text-center lg:text-left">
-            {/* Logo and Brand Name */}
-            <div className="flex items-center justify-center lg:justify-start gap-3 mb-6">
-              <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 shadow-lg">
-                <Shield className="w-7 h-7 text-white" />
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">KidGuard AI</h2>
-            </div>
-
             {/* Badge */}
             <Badge className="inline-flex items-center gap-2 mb-6 bg-blue-100 text-blue-700 hover:bg-blue-100 px-4 py-2 text-sm font-medium">
               <Sparkles className="w-4 h-4" />
@@ -85,11 +77,14 @@ export function Hero() {
             <div className="relative aspect-[4/3] max-w-2xl mx-auto lg:max-w-lg">
               {/* Hero Image - Happy kids safe online */}
               <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl">
-                {/* Option 1: Kids laughing with tablet - joyful and safe */}
+                {/* Optimized WebP image - kids laughing with tablet */}
                 <img
-                  src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1200&q=80"
-                  alt="Happy children laughing together while safely using tablet with parental protection"
+                  src="/images/hero-kids-tablet.webp"
+                  alt="Happy children laughing together while safely using tablet with KidGuard AI parental control protection"
                   className="w-full h-full object-cover"
+                  width={1200}
+                  height={1807}
+                  loading="eager"
                 />
 
                 {/* Alternative images you can try:

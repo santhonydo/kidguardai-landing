@@ -1,7 +1,8 @@
 "use client"
 
-import { Check, X, AlertTriangle } from 'lucide-react'
+import { Check, X, AlertTriangle, ArrowRight } from 'lucide-react'
 import { Card } from '@/components/ui/card'
+import Link from 'next/link'
 
 export function Comparison() {
   const features = [
@@ -213,11 +214,44 @@ export function Comparison() {
               <h3 className="text-xl sm:text-2xl font-bold mb-2">
                 The Only Solution That Actually Works on Mac
               </h3>
-              <p className="text-blue-50">
+              <p className="text-blue-50 mb-4">
                 Qustodio only blocks Safari. Apple Screen Time doesn't filter web content on macOS.
                 Bark doesn't even support Mac. We're the first and only to block ALL browsers with real AI.
               </p>
+              <Link href="/compare">
+                <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center gap-2">
+                  See Detailed Comparisons
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+              </Link>
             </div>
+          </div>
+        </div>
+
+        {/* Quick links to competitor comparisons */}
+        <div className="mt-8 text-center">
+          <p className="text-gray-600 mb-4 font-medium">Looking for a specific alternative?</p>
+          <div className="flex flex-wrap justify-center gap-3">
+            <Link href="/compare/qustodio-alternative">
+              <button className="px-4 py-2 bg-white border-2 border-gray-200 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-colors text-sm font-medium">
+                Qustodio Alternative
+              </button>
+            </Link>
+            <Link href="/compare/bark-alternative">
+              <button className="px-4 py-2 bg-white border-2 border-gray-200 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-colors text-sm font-medium">
+                Bark Alternative
+              </button>
+            </Link>
+            <Link href="/compare/norton-family-alternative">
+              <button className="px-4 py-2 bg-white border-2 border-gray-200 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-colors text-sm font-medium">
+                Norton Family Alternative
+              </button>
+            </Link>
+            <Link href="/compare/apple-screen-time-alternative">
+              <button className="px-4 py-2 bg-white border-2 border-gray-200 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-colors text-sm font-medium">
+                Screen Time Alternative
+              </button>
+            </Link>
           </div>
         </div>
       </div>

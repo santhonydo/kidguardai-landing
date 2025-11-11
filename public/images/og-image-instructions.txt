@@ -1,0 +1,13 @@
+OPEN GRAPH IMAGE NEEDED:
+
+Size: 1200x630px
+Format: PNG or JPG
+Content:
+- KidGuard AI logo/branding
+- Tagline: "Parental Control That Actually Makes Sense"
+- Key differentiator: "Blocks ALL Browsers on Mac"
+- Clean, professional design with blue/green gradient
+- Shield icon
+
+For now, we'll use the hero image cropped and resized.
+User should create a custom branded OG image later.

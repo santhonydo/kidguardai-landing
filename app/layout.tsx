@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { GoogleAnalytics } from "@/components/analytics";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -9,8 +10,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "KidGuard AI - AI-Powered Parental Control for iOS & Mac | Join Waitlist",
-  description: "The only parental control app with on-device AI, natural language controls, and SMS remote access. Works across ALL browsers on Mac. Join 2,500+ parents on the waitlist.",
+  title: "KidGuard AI: Best Parental Control App for Mac & iOS 2025",
+  description: "The only Mac parental control that blocks ALL browsers (Chrome, Firefox, Safari). On-device AI, SMS alerts, natural language rules. Qustodio alternative. Join 2,500+ parents.",
   keywords: [
     "parental control",
     "parental control app",
@@ -92,40 +93,67 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "SoftwareApplication",
-              "name": "KidGuard AI",
-              "applicationCategory": "LifestyleApplication",
-              "operatingSystem": ["iOS", "iPadOS", "macOS"],
-              "offers": {
-                "@type": "Offer",
-                "price": "9.99",
-                "priceCurrency": "USD",
-                "priceValidUntil": "2026-12-31",
-                "availability": "https://schema.org/PreOrder",
-              },
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.9",
-                "ratingCount": "500",
-              },
-              "description": "AI-powered parental control app with on-device processing, natural language controls, and SMS remote access. Works across all browsers on macOS.",
-              "author": {
-                "@type": "Organization",
-                "name": "KidGuard AI",
-              },
-              "featureList": [
-                "On-device AI processing",
-                "Natural language rule creation",
-                "Two-way SMS control",
-                "System-wide browser blocking",
-                "Privacy-first architecture",
-                "Cross-platform support (iOS, iPadOS, macOS)"
-              ],
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": "https://kidguardai.com/#organization",
+                  "name": "KidGuard AI",
+                  "url": "https://kidguardai.com",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://kidguardai.com/logo.png"
+                  },
+                  "description": "Privacy-first parental control for Mac and iOS with on-device AI processing",
+                  "contactPoint": {
+                    "@type": "ContactPoint",
+                    "contactType": "Customer Support",
+                    "email": "support@kidguardai.com"
+                  }
+                },
+                {
+                  "@type": "SoftwareApplication",
+                  "@id": "https://kidguardai.com/#software",
+                  "name": "KidGuard AI",
+                  "applicationCategory": "LifestyleApplication",
+                  "operatingSystem": ["iOS 15.0", "iPadOS 15.0", "macOS 13.0"],
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "9.99",
+                    "priceCurrency": "USD",
+                    "priceValidUntil": "2026-12-31",
+                    "availability": "https://schema.org/PreOrder"
+                  },
+                  "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.9",
+                    "ratingCount": "500"
+                  },
+                  "description": "The only Mac parental control that blocks ALL browsers (Chrome, Firefox, Safari). On-device AI processing, SMS alerts, natural language rules. Privacy-first alternative to Qustodio and Bark.",
+                  "author": {
+                    "@type": "Organization",
+                    "@id": "https://kidguardai.com/#organization"
+                  },
+                  "featureList": [
+                    "On-device AI content filtering",
+                    "Natural language rule creation with voice support",
+                    "Two-way SMS remote control",
+                    "System-wide browser blocking (Chrome, Firefox, Safari, Edge)",
+                    "Privacy-first architecture - zero cloud tracking",
+                    "Cross-platform support (iOS, iPadOS, macOS)",
+                    "MLX Swift on-device LLM processing",
+                    "Network Extension for HTTPS blocking"
+                  ],
+                  "screenshot": "https://kidguardai.com/screenshots/dashboard.png",
+                  "softwareVersion": "1.0.0",
+                  "applicationSubCategory": "Parental Control Software"
+                }
+              ]
             }),
           }}
         />
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
+        <GoogleAnalytics />
         {children}
       </body>
     </html>
