@@ -38,6 +38,14 @@ export const metadata: Metadata = {
     description: "Keep your kids safe online without the tech headaches. AI-powered protection that speaks your language. Works across ALL browsers on Mac.",
     url: "https://kidguardai.com",
     siteName: "KidGuard AI",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "KidGuard AI - AI-Powered Parental Control",
+      },
+    ],
     locale: "en_US",
     type: "website",
   },
@@ -46,6 +54,7 @@ export const metadata: Metadata = {
     title: "KidGuard AI - AI-Powered Parental Control for iOS & Mac",
     description: "The only parental control with on-device AI and SMS remote access. Get early access for $79/year.",
     creator: "@kidguardai",
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,
